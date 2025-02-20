@@ -1,0 +1,92 @@
+@use "../variables" as *;
+
+/* Marquee Section */
+.marquee-wrapper {
+  border-top: 5px solid $blue;
+  border-bottom: 5px solid $yellow;
+  background-color: $black;
+
+  /* Marquee container */
+  .marquee {
+    gap: 0;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  /* Marquee content */
+  .marquee__content {
+    display: flex;
+    margin: 0;
+    min-width: 100%;
+    justify-content: space-around; /* Вирівнювання елементів в ряд */
+    flex-shrink: 0;
+    animation: scroll 10s linear infinite;
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  /* Aнімація для прокручування */
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Стили для заголовків */
+  .heading-3 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    margin: 0 24px;
+  }
+
+  /* Стили для зображень */
+  .marquee__content img {
+    align-items: center;
+  }
+}
+
+
+
+/* Адаптивність для різних екранів */
+@media (max-width: 1200px) {
+  .heading-3 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 992px) {
+  .marquee{
+    padding: 24px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-3 {
+    font-size: 24px;
+  }
+
+  .marquee__content {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-3 {
+    font-size: 18px;
+  }
+
+  .marquee__content {
+    gap: 0.25rem;
+  }
+}
+

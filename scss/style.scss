@@ -1,0 +1,142 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'section/header';
+@use 'components/menu';
+@use 'section/hero';
+@use "section/tricker";
+@use "section/about-us";
+@use "section/mission";
+@use "section/numbers";
+@use "section/video";
+@use "section/projects";
+@use "section/events";
+@use "section/members-can";
+@use "section/partners";
+@use "section/news";
+@use "section/team";
+@use "section/contacts";
+@use 'section/footer';
+@use "components/background";
+@use "components/icons";
+@use "components/main";
+
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 320px;
+  height: 100%;
+  color: $white;
+  background-color: $black;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  overflow-x: hidden;
+}
+
+h2, h3, h4 {
+  margin-top: -20px !important;
+  padding-top: 20px !important;
+}
+
+h6 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: $white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+.heading-1 {
+  font-weight: 500;
+  font-size: 65px;
+  line-height: 76px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.heading-2 {
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 49px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.heading-2__bottom {
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 49px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.heading-3 {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.heading-4 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 130%;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.heading-5 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.heading-6 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.menu-text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.text-small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.link-small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  text-decoration-line: underline;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+.footer-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration-line: underline;
+}

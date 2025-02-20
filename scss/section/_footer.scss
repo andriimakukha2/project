@@ -1,0 +1,123 @@
+@use "../variables" as *;
+
+.footer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  .container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    max-height: 272px;
+
+    .footer-grid {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+
+      .footer-logo {
+        display: flex;
+        flex-direction: column;
+        grid-column-end: span 12;
+
+        .logo {
+          display: inline-block;
+
+          img {}
+        }
+
+        .footer-copyright {
+          margin-top: 2rem;
+
+          .copyright-text {}
+        }
+      }
+
+      .footer-menu {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        grid-column-end: span 12;
+        max-height: 138px;
+        gap: 10px;
+
+        .menu-link {
+          width: calc(68% / 2);
+          &.main-menu-link {}
+        }
+      }
+
+      .footer-development {
+        grid-column: 4 / span 2;
+
+        .footer-label {}
+        .footer-link {}
+      }
+
+      .footer-design {
+        grid-column: 6 / span 2;
+        .footer-label {}
+        .footer-link {}
+      }
+
+      .footer-marketing {
+        grid-column: 8 / span 3;
+        .footer-label {}
+        .footer-link {}
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .footer {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .container {
+      .footer-grid {
+        .footer-logo {
+          grid-column-end: span 3;
+
+          .logo {
+            img {}
+          }
+
+          .footer-copyright {
+
+            .copyright-text {}
+          }
+        }
+
+        .footer-menu {
+          grid-column-end: span 9;
+
+          .menu-link {
+
+          }
+        }
+
+
+
+        .footer-development {
+          .footer-label {}
+          .footer-link {}
+        }
+
+        .footer-design {
+          .footer-label {}
+          .footer-link {}
+        }
+
+        .footer-marketing {
+          .footer-label {}
+          .footer-link {}
+        }
+      }
+    }
+  }
+}

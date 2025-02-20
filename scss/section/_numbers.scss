@@ -1,0 +1,150 @@
+@use "../variables" as *;
+
+.numbers {
+  margin: 16px 0;
+  padding: 16px 0;
+
+  .container {
+    padding: 0 80px;
+
+    .heading-2 {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .grid-information {
+      display: grid;
+      gap: 20px;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(12, 1fr);
+      margin-bottom: 2rem;
+
+      .grid-information__left {
+        display: flex;
+        grid-column-end: span 12;
+      }
+
+      .grid-information__right {
+        display: flex;
+        grid-column-end: span 12;
+        align-items: center;
+
+        .heading-4 {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    .grid-numbers {
+      display: grid;
+      gap: 50px;
+      grid-template-rows: 1fr;
+
+      .grid-numbers__column-1 {
+        grid-column-end: span 12;
+
+        p {
+          max-width: 244px;
+        }
+      }
+
+      .grid-numbers__column-2 {
+        grid-column-end: span 12;
+
+        p {
+          max-width: 244px;
+        }
+      }
+
+      .grid-numbers__column-3 {
+        grid-column-end: span 12;
+
+        p {
+          max-width: 295px;
+        }
+      }
+    }
+  }
+}
+
+  .heading-2__bottom {
+    margin: 0 0 4px;
+  }
+
+  .heading-4 {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+@media (min-width: 992px) {
+  .numbers {
+    margin: 48px 0;
+    padding: 48px 0;
+
+    .container {
+      .heading-2 {
+        margin: 0 0 32px 0;
+      }
+
+      .grid-information {
+        margin-bottom: 3rem;
+
+        .grid-information__left {
+          grid-column-end: span 6;
+        }
+        .grid-information__right {
+          grid-column-end: span 6;
+        }
+      }
+
+      .grid-numbers {
+        grid-template-columns: repeat(11, 1fr);
+
+        .grid-numbers__column-1 {
+          grid-column-start: 2;
+          grid-column-end: span 3;
+        }
+
+        .grid-numbers__column-2 {
+          grid-column-end: span 3;
+        }
+
+        .grid-numbers__column-3 {
+          grid-column-end: span 3;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .numbers {
+
+    .container {
+
+      .grid-numbers {
+
+        .grid-numbers__column-1 {
+          grid-column-end: span 6;
+        }
+
+        .grid-numbers__column-2 {
+          grid-column-end: span 6;
+        }
+
+        .grid-numbers__column-3 {
+          grid-column-end: span 6;
+        }
+      }
+    }
+  }
+}

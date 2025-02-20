@@ -1,0 +1,258 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+
+  .container {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    width: 100%;
+  }
+
+  .navbar {
+    justify-content: space-between;
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  .navbar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid $white;
+    padding: 0 0 8px;
+  }
+
+  /* Логотип */
+  .header__logo {
+    margin-right: 64px;
+    flex-shrink: 0;
+  }
+
+  /* Ліва частина (Соцмережі) */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  /* Права частина (Телефон, адреса, мова) */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    white-space: nowrap;
+  }
+
+  /* Телефон */
+  .phone {
+    display: flex;
+    align-items: center;
+    color: $white;
+    text-decoration: none;
+
+    img {
+      margin: 0 8px 0 0;
+    }
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  /* Адреса */
+  .address {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: flex;
+      align-items: center;
+      color: $white;
+
+      img {
+        margin: 0 8px 0 0;
+      }
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+
+  /* Мова */
+  @mixin dropdown-animation {
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  // Dropdown (языки)
+  .language {
+    position: relative;
+    z-index: 100;
+
+    .lang {
+      display: flex;
+      align-items: center;
+      color: $white;
+      text-decoration: none;
+      cursor: pointer;
+
+      img {
+        margin: 0 0 0 8px;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .dropdown-content {
+      @include dropdown-animation;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: $black;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      min-width: 100px;
+
+      .dropdown-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      a {
+        color: $white;
+        text-decoration: none;
+        padding: 5px 0;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    &:hover {
+      .dropdown-content {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+
+      .lang img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  /* Главное меню */
+  .navbar-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 23px;
+    }
+  }
+
+  /* Подменю "Наши направления" */
+  .main-menu-item {
+    position: relative;
+    z-index: 100;
+
+    .sub-menu-wrapper {
+      @include dropdown-animation;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: $black;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      min-width: 220px;
+
+      .sub-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .sub-menu-item {
+        padding: 8px 15px;
+
+        a {
+          color: $white;
+          text-decoration: none;
+          display: block;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .sub-menu-wrapper {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+    }
+  }
+}
+
+/* Адаптивність */
+@media (min-width: 992px) {
+  .navbar-bottom {
+    padding-top: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

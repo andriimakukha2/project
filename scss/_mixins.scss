@@ -1,0 +1,30 @@
+@use "sass:color";
+@use "variables" as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button($bg-color, $text-color) {
+  background: $bg-color;
+  color: $white;
+  padding: 14px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: color.adjust($bg-color, $lightness: -10%);
+  }
+}
+
+@mixin text($size, $weight: 400) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: 1.2;
+}

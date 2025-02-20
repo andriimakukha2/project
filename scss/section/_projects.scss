@@ -1,0 +1,121 @@
+@use "../variables" as *;
+
+.projects {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  .container {
+
+    .heading-2 {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .projects-wrapper {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(3, 10rem);
+      gap: 20px;
+      padding: 0 80px;
+
+      .card-project {
+        display: flex;
+        align-items: flex-end;
+        padding: 1rem;
+        grid-column-end: span 6;
+        grid-row-end: span 3;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 2rem;
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        .heading-5 {
+          position: relative;
+          z-index: 5;
+          transition: all .3s ease-in-out;
+          margin: 0;
+        }
+      }
+
+      .bg-gradient::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.19%, rgba(1, 30, 65, 0.75) 100%);
+        z-index: 1;
+      }
+
+      .bg-yellow {
+        background-color: $yellow;
+        color: $black;
+        grid-row-end: span 2;
+      }
+
+      .bottom {
+        grid-row-end: span 2;
+      }
+
+      .right {
+        grid-row-end: span 5;
+      }
+
+      .bg-blue {
+        grid-row-end: span 2;
+        background-color: $blue;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 992px) {
+  .projects {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    .container {
+
+      .heading-2 {
+        margin-bottom: 2rem;
+      }
+
+      .projects-wrapper {
+
+        .card-project {
+          grid-column-end: span 3;
+          grid-row-end: span 2;
+        }
+
+        .bg-yellow {
+          grid-row-end: span 1;
+        }
+
+        .bottom {
+          grid-row-end: span 1;
+        }
+
+        .right {
+          grid-row-end: span 3;
+        }
+
+        .bg-blue {
+          grid-row-end: span 1;
+        }
+      }
+    }
+  }
+}

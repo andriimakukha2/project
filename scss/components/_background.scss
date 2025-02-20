@@ -1,0 +1,109 @@
+@use "../variables" as *;
+
+.hands {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.hands img {
+  width: 100%;
+  height: 100%;
+}
+
+.sphere-yellow {
+  position: absolute;
+  width: 355px;
+  height: 355px;
+  background: $yellow;
+  border: 1px solid rgba(255, 231, 17, 0.35);
+  filter: blur(250px);
+  z-index: -1;
+  right: -34px;
+  top: 148px;
+}
+
+.sphere-blue {
+  position: absolute;
+  width: 355px;
+  height: 355px;
+  background: $blue;
+  filter: blur(250px);
+  z-index: -1;
+  left: -151px;
+  top: 456px;
+}
+
+.sphere-yellow-2 {
+  position: absolute;
+  width: 355px;
+  height: 355px;
+  background: $yellow;
+  border: 1px solid rgba(255, 231, 17, 0.35);
+  filter: blur(250px);
+  z-index: -1;
+  left: -109px;
+  bottom: 40%;
+}
+
+.sphere-blue-2 {
+  position: absolute;
+  width: 355px;
+  height: 355px;
+  background: $blue;
+  filter: blur(250px);
+  z-index: -1;
+  right: -355px;
+  bottom: 10%;
+}
+
+.sphere-yellow-3 {
+  position: absolute;
+  width: 355px;
+  height: 355px;
+  background: $yellow;
+  border: 1px solid rgba(255, 231, 17, 0.35);
+  filter: blur(250px);
+  z-index: -1;
+  left: -258.5px;
+  bottom: 0;
+}
+
+
+@media (min-width: 992px) {
+  .sphere-yellow-2 {
+    display: block;
+  }
+
+  .sphere-blue-2 {
+    display: block;
+  }
+
+  .sphere-yellow-3 {
+    display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .sphere-yellow {
+    width: 125px;
+    height: 125px;
+    filter: blur(125px);
+    top: 80px;
+  }
+
+  .sphere-blue {
+    width: 125px;
+    height: 125px;
+    filter: blur(125px);
+    top: 120px;
+  }
+
+  .hands {
+     top: 100px;
+  }
+}
+
+
